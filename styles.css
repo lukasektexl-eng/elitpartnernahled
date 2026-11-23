@@ -270,7 +270,7 @@ a:hover { color: var(--steel-ink); text-decoration-thickness: .14em; }
    Kusovník
    ========================================================== */
 .bom { list-style: none; margin: 0; padding: 0; }
-.bom__head, .bom__row { display: grid; grid-template-columns: 72px minmax(0, 1.25fr) minmax(0, 1.6fr) 170px 150px; gap: 0 24px; align-items: center; }
+.bom__head, .bom__row { display: grid; grid-template-columns: 72px minmax(0, 1.25fr) minmax(0, 1.8fr) 150px; gap: 0 24px; align-items: center; }
 .bom__head { padding: 0 0 10px; font: 600 .9rem/1.2 var(--font-head); font-stretch: 112%; color: var(--muted); border-bottom: 1px solid var(--text); }
 .bom__row { padding: 22px 0; border-bottom: 1px solid var(--line); transition: background-color .2s; }
 .bom__row:target, .bom__row.is-hot { background: rgba(47, 93, 138, .09); }
@@ -279,19 +279,17 @@ a:hover { color: var(--steel-ink); text-decoration-thickness: .14em; }
 .bom__pict { width: 58px; height: 58px; color: var(--steel); flex: none; }
 .bom__name h3 { margin: 0; font-size: clamp(1.3rem, 1.1rem + .6vw, 1.65rem); font-stretch: 108%; }
 .bom__desc { margin: 0; color: var(--muted); }
-.bom__price { margin: 0; font-weight: 700; color: var(--steel-ink); }
 .bom__book { justify-self: end; display: inline-flex; align-items: center; gap: .4em; min-height: 48px; padding: 0 4px; font-weight: 700; }
 @media (max-width: 960px) {
   .bom__head { display: none; }
-  .bom__row { grid-template-columns: 56px minmax(0, 1fr) auto; grid-template-areas: "pos name book" "pos desc desc" "pos price price"; gap: 4px 16px; align-items: start; }
+  .bom__row { grid-template-columns: 56px minmax(0, 1fr) auto; grid-template-areas: "pos name book" "pos desc desc"; gap: 4px 16px; align-items: start; }
   .bom__pos { grid-area: pos; width: 44px; height: 44px; font-size: 1.1rem; }
   .bom__name { grid-area: name; align-self: center; }
   .bom__desc { grid-area: desc; }
-  .bom__price { grid-area: price; font-size: 1rem; }
   .bom__book { grid-area: book; align-self: center; }
 }
 @media (max-width: 480px) {
-  .bom__row { grid-template-columns: 52px minmax(0, 1fr); grid-template-areas: "pos name" "pos desc" "pos price" "pos book"; }
+  .bom__row { grid-template-columns: 52px minmax(0, 1fr); grid-template-areas: "pos name" "pos desc" "pos book"; }
   .bom__pict { width: 40px; height: 40px; }
   .bom__book { justify-self: start; }
 }
@@ -491,7 +489,6 @@ a:hover { color: var(--steel-ink); text-decoration-thickness: .14em; }
 .hours__table tr.is-closed td { color: var(--muted); font-weight: 400; }
 .hours__table tr.is-today { background: var(--steel-tint); box-shadow: inset 5px 0 0 var(--steel); }
 .hours__table tr.is-today th { font-weight: 700; }
-.hours__note { color: var(--muted); font-size: 1rem; margin: 14px 0 0; }
 @media (max-width: 900px) { .contact { grid-template-columns: 1fr; } }
 
 /* ----- Patička ----- */

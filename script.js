@@ -66,7 +66,7 @@
     var short, long, open = false;
     if (isHoliday(d)) {
       short = "· dnes je státní svátek";
-      long = "Dnes je státní svátek – raději předem zavolejte.";
+      long = "Dnes je státní svátek.";
     } else if (dow === 0 || dow === 6) {
       short = "· dnes zavřeno";
       long = "Dnes zavřeno. Otevíráme v pondělí v 8:00.";
