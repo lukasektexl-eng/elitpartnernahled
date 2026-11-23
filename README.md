@@ -4,7 +4,8 @@ Nevyžádaný ukázkový návrh jednostránkového webu pro *Autoservis – Pneu
 
 - Čisté HTML/CSS/JS, bez frameworků, bez analytiky, bez cizích skriptů.
 - Formulář objednání je pouze demo – nic se neodesílá.
-- Fonty Archivo a Source Sans 3 jsou hostované lokálně (licence SIL OFL ve složce `fonts/`).
+- Koncept: technický výkres – kolo v rozloženém pohledu (díly = služby), kusovník, technologický postup, rohové razítko.
+- Fonty Archivo (variabilní šířka) a Source Sans 3 jsou hostované lokálně (licence SIL OFL ve složce `fonts/`).
 - Místa pro budoucí fotky jsou v HTML označená `<!-- FOTO: ... -->`.
 
 Náhled: otevřete `index.html` nebo GitHub Pages z větve `main`.

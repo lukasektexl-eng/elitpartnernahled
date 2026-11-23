@@ -114,6 +114,41 @@
     reveals.forEach(function (el) { el.classList.add("is-in"); });
   }
 
+  /* ---------- výkres: rozložení kola + propojení se službami ---------- */
+  var wheel = document.querySelector(".wheel");
+  if (wheel) {
+    // dva snímky, aby prohlížeč nejdřív vykreslil poskládané kolo
+    requestAnimationFrame(function () {
+      requestAnimationFrame(function () { wheel.classList.add("is-built"); });
+    });
+    setTimeout(function () { wheel.classList.add("is-settled"); }, reduce ? 0 : 2400);
+
+    var linked = document.querySelectorAll("[data-part]");
+    function hot(num) {
+      wheel.classList.toggle("has-hot", !!num);
+      linked.forEach(function (el) {
+        el.classList.toggle("is-hot", !!num && el.getAttribute("data-part") === num);
+      });
+    }
+    linked.forEach(function (el) {
+      var num = el.getAttribute("data-part");
+      el.addEventListener("mouseenter", function () { hot(num); });
+      el.addEventListener("mouseleave", function () { hot(null); });
+      if (el.tagName === "A") {
+        el.addEventListener("focus", function () { hot(num); });
+        el.addEventListener("blur", function () { hot(null); });
+      }
+    });
+    // díl ve výkresu je klikací: posune na službu v kusovníku
+    wheel.querySelectorAll(".part, .callout").forEach(function (g) {
+      g.style.cursor = "pointer";
+      g.addEventListener("click", function () {
+        var row = document.getElementById("s-" + g.getAttribute("data-part"));
+        if (row) row.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "center" });
+      });
+    });
+  }
+
   /* ---------- objednání (demo) ---------- */
   var form = document.getElementById("booking-form");
   if (!form) return;
